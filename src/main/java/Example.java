@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class Example {
+public class Example {
+    public static void main (String args []){
+        System.out.print("Hello java");
+    }
 }
