@@ -1,20 +1,27 @@
 package edu.icet.orm.controller;
 
 import edu.icet.orm.dto.Patient;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import edu.icet.orm.service.PatientService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
-@RequestMapping
+import java.util.ArrayList;
+
 @CrossOrigin
+@RestController
 public class PatientController {
-    @GetMapping
-    public  Patient getPatient(){
-        Patient patient = new Patient();
-        patient.setId(1);
-        patient.setName("sahan");
-        patient.setAddress("matara");
-        return patient;
+    @Autowired
+    PatientService patientService;
+
+    @GetMapping("/getPatient")
+    public ArrayList<Patient> getPatient() {
+       return patientService.getPatient();
+
+    }
+    @PostMapping("/patient-save")
+    public void addPatient(@RequestBody Patient patient) {
+        patientService.addPatient(patient);
     }
 
 }
