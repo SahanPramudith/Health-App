@@ -27,4 +27,8 @@ public class PatientController {
     public void deletePatient(@PathVariable Integer id){
         patientService.detePatient(id);
     }
+    @PutMapping("/update")
+    public void updatePatient(@RequestBody Patient patient){
+        patientService.addPatient(patient);
+    }
 }

@@ -31,8 +31,6 @@ public class PatientServiceImpl implements PatientService{
     @Override
     public void addPatient(Patient patient) {
         repository.save(mapper.map(patient, PatientEntity.class));
-
-
     }
 
     @Override
