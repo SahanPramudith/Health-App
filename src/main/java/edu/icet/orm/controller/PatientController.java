@@ -23,5 +23,4 @@ public class PatientController {
     public void addPatient(@RequestBody Patient patient) {
         patientService.addPatient(patient);
     }
-
 }
