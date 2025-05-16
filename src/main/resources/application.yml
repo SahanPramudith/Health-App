@@ -4,7 +4,6 @@ spring :
     username: root
     password: sahan
 
-    jpa:
-        hibernate:
-            ddl-auto: update
-            show-sql: true
+  jpa:
+    hibernate:
+      ddl-auto: update
