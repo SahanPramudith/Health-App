@@ -12,4 +12,6 @@ public interface PatientRepository extends JpaRepository<PatientEntity, Integer>
 
 
     ArrayList<PatientEntity> findByNic(String nic);
+
+    ArrayList<PatientEntity> findByAddress(String addres);
 }

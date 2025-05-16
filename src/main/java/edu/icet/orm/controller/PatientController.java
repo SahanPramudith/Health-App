@@ -38,4 +38,8 @@ public class PatientController {
     public ArrayList<Patient> searchByNic(@PathVariable String nic) {
         return patientService.searchByNic(nic);
     }
+    @GetMapping("/search/address/{address}")
+    public ArrayList<Patient> searchByAddress(@PathVariable String address ){
+        return patientService.searchByAddress(address);
+    }
 }
