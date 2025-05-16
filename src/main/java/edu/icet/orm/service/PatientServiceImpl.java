@@ -34,4 +34,9 @@ public class PatientServiceImpl implements PatientService{
 
 
     }
+
+    @Override
+    public void detePatient(Integer id) {
+        repository.deleteById(id);
+    }
 }

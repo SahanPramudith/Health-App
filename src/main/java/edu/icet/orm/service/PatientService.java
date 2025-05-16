@@ -10,4 +10,6 @@ public interface PatientService {
     ArrayList<Patient> getPatient();
 
     void addPatient(Patient patient);
+
+    void detePatient(Integer id);
 }
