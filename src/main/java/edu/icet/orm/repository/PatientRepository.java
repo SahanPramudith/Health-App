@@ -9,4 +9,7 @@ import java.util.ArrayList;
 public interface PatientRepository extends JpaRepository<PatientEntity, Integer> {
 
     ArrayList<PatientEntity> findByName(String name);
+
+
+    ArrayList<PatientEntity> findByNic(String nic);
 }

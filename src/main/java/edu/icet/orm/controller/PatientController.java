@@ -30,8 +30,12 @@ public class PatientController {
     public void updatePatient(@RequestBody Patient patient){
         patientService.addPatient(patient);
     }
-    @GetMapping("/search/{name}")
+    @GetMapping("/search/name/{name}")
     public ArrayList<Patient> searchByName(@PathVariable String name){
         return patientService.searchByName(name);
+    }
+    @GetMapping("/search/nic/{nic}")
+    public ArrayList<Patient> searchByNic(@PathVariable String nic) {
+        return patientService.searchByNic(nic);
     }
 }

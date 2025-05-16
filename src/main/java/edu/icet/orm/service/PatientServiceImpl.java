@@ -48,5 +48,15 @@ public class PatientServiceImpl implements PatientService{
        return patients;
     }
 
+    @Override
+    public ArrayList<Patient> searchByNic(String nic) {
+        ArrayList<Patient> searchNic = new ArrayList<>();
+        repository.findByNic(nic).forEach(entity -> {
+            searchNic.add(mapper.map(entity, Patient.class));
+        });
+
+        return searchNic;
+    }
+
 
 }

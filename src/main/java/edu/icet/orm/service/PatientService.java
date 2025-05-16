@@ -15,4 +15,6 @@ public interface PatientService {
     void detePatient(Integer id);
 
     ArrayList<Patient> searchByName(String name);
+
+    ArrayList<Patient> searchByNic(String nic);
 }
