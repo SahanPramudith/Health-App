@@ -37,4 +37,16 @@ public class PatientServiceImpl implements PatientService{
     public void detePatient(Integer id) {
         repository.deleteById(id);
     }
+
+    @Override
+    public ArrayList<Patient> searchByName(String name) {
+        ArrayList<Patient> patients = new ArrayList<>();
+       repository.findByName(name).forEach(entity ->{
+           patients.add(mapper.map(entity, Patient.class));
+       } );
+
+       return patients;
+    }
+
+
 }

@@ -3,7 +3,6 @@ package edu.icet.orm.controller;
 import edu.icet.orm.dto.Patient;
 import edu.icet.orm.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -30,5 +29,9 @@ public class PatientController {
     @PutMapping("/update")
     public void updatePatient(@RequestBody Patient patient){
         patientService.addPatient(patient);
+    }
+    @GetMapping("/search/{name}")
+    public ArrayList<Patient> searchByName(@PathVariable String name){
+        return patientService.searchByName(name);
     }
 }
