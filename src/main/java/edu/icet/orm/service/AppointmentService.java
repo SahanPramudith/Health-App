@@ -7,9 +7,7 @@ import java.util.ArrayList;
 public interface AppointmentService {
     void addAppointment(Appointment appointment);
 
+    ArrayList<Appointment> searchByNic(String patientId);
+
     ArrayList<Appointment> getAll();
-
-
-
-
 }

@@ -19,7 +19,7 @@ public class Appointment {
     private LocalDate date;
     private LocalTime time;
     private String status;
-    private String gNumber;
+    private String g_Number;
     private String roomNuber;
     private String adminId;
     private String patientId;

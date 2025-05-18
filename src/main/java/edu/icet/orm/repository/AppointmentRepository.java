@@ -7,4 +7,6 @@ import java.util.ArrayList;
 
 public interface AppointmentRepository extends JpaRepository<AppointmentEntity,Integer> {
 
+
+    ArrayList<AppointmentEntity> findByPatientId(String patientId);
 }

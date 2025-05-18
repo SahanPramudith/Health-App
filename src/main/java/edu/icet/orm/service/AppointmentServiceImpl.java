@@ -22,14 +22,26 @@ public class AppointmentServiceImpl implements AppointmentService{
         repository.save(modelMapper.map(appointment, AppointmentEntity.class));
     }
 
+
+
+    @Override
+    public ArrayList<Appointment> searchByNic(String patientId) {
+        ArrayList<Appointment> list = new ArrayList<>();
+        repository.findByPatientId(patientId).forEach(appointmentEntity -> {
+            list.add(modelMapper.map(appointmentEntity, Appointment.class));
+        });
+        System.out.println("list = " + list);
+        return list;
+                
+    }
+
     @Override
     public ArrayList<Appointment> getAll() {
-        ArrayList<Appointment> appointment = new ArrayList<>();
-
-        for (AppointmentEntity appointmentEntity : repository.findAll()) {
-            appointment.add(modelMapper.map(appointmentEntity,Appointment.class));
-        }
-        return appointment;
+        ArrayList<Appointment> list = new ArrayList<>();
+        repository.findAll().forEach(appointmentEntity -> {
+            list.add(modelMapper.map(appointmentEntity, Appointment.class));
+        });
+        return list;
     }
 
 }
