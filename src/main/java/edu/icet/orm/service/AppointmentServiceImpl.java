@@ -44,4 +44,9 @@ public class AppointmentServiceImpl implements AppointmentService{
         return list;
     }
 
+    @Override
+    public void delete(Integer id) {
+        repository.deleteById(id);
+    }
+
 }

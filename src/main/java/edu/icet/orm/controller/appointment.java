@@ -22,12 +22,21 @@ public class appointment {
         return appointmentService.getAll();
     }
 
-        @GetMapping("search/searchByNic/{patientId}")
+    @GetMapping("search/searchByNic/{patientId}")
     public ArrayList<Appointment> searchByNic(@PathVariable String patientId){
             ArrayList<Appointment> appointments = appointmentService.searchByNic(patientId);
             System.out.println("appointments = " + appointments);
             return appointments;
-        }
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteById(@PathVariable Integer id){
+        appointmentService.delete(id);
+
+    }
+
+
+
 
 
 

@@ -10,4 +10,6 @@ public interface AppointmentService {
     ArrayList<Appointment> searchByNic(String patientId);
 
     ArrayList<Appointment> getAll();
+
+    void delete(Integer id);
 }
