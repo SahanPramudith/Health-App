@@ -1,8 +1,11 @@
-package edu.icet.orm.service;
+package edu.icet.orm.service.IMPL;
 
 import edu.icet.orm.dto.Appointment;
 import edu.icet.orm.entity.AppointmentEntity;
+import edu.icet.orm.entity.PatientEntity;
 import edu.icet.orm.repository.AppointmentRepository;
+import edu.icet.orm.repository.PatientRepository;
+import edu.icet.orm.service.AppointmentService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,16 +13,18 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 
 @Service
-public class AppointmentServiceImpl implements AppointmentService{
+public class AppointmentServiceImpl implements AppointmentService {
    @Autowired
     AppointmentRepository repository;
    @Autowired
    ModelMapper
     modelMapper;
+  
+
 
     @Override
     public void addAppointment(Appointment appointment) {
-        repository.save(modelMapper.map(appointment, AppointmentEntity.class));
+       repository.save(modelMapper.map(appointment, AppointmentEntity.class));
     }
 
 

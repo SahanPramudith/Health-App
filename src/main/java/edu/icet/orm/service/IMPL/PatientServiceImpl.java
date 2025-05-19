@@ -1,8 +1,9 @@
-package edu.icet.orm.service;
+package edu.icet.orm.service.IMPL;
 
 import edu.icet.orm.dto.Patient;
 import edu.icet.orm.entity.PatientEntity;
 import edu.icet.orm.repository.PatientRepository;
+import edu.icet.orm.service.PatientService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 
 @Service
-public class PatientServiceImpl implements PatientService{
+public class PatientServiceImpl implements PatientService {
 
     @Autowired
     PatientRepository repository;
